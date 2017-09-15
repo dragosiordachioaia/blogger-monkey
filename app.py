@@ -9,7 +9,7 @@ def hello_world():
     data = {
         "app_name": "Special Blogger Monkey",
     }
-    return render_template('index.html', data)
+    return render_template('index.html', data=data)
     return 'hey there!'
 
 @app.route('/posts', methods=['GET'])
