@@ -1,11 +1,15 @@
 from tinydb import TinyDB, Query
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 app = Flask(__name__)
 db = TinyDB('db.json')
 
 @app.route('/')
 def hello_world():
+    data = {
+        "app_name": "Special Blogger Monkey",
+    }
+    return render_template('index.html', data)
     return 'hey there!'
 
 @app.route('/posts', methods=['GET'])
